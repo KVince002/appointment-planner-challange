@@ -69,24 +69,15 @@ export const ContactsPage = (props) => {
 		<div>
 			<section>
 				<h2>Add Contact</h2>
-				<form onSubmit={handleSubmit}>
-					<label for="nameInput">Name</label>
-					<input type="text" name="nameInput" id="nameInput" required onChange={handleName} value={name}/>
-					<br/>
-					<label for="phoneInput">Phone</label>
-					<input type="text" name="phoneInput" id="phoneInput" required onChange={handlePhone} value={phone}/>
-					<br/>
-					<label for="emailInput">Email</label>
-					<input type="email" name="emailInput" id="emailInput" required onChange={handleEmail}
-						   value={email}/>
-					<br/>
-					<button type="submit">Submit</button>
-				</form>
+				{/*
+        @todo: Insert the ContactForm.js and make it compatible
+        */}
+        <ContactForm name={name} setName={setName} phone={phone} setPhone={setPhone} email={email} setEmail={setEmail} handleSubmit={handleSubmit}/>
 			</section>
 			<hr/>
 			<section>
 				<h2>Contacts</h2>
-        <TileList contact={contacts}/>
+				<TileList contact={contacts}/>
 			</section>
 		</div>
 	);
