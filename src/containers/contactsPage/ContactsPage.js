@@ -72,7 +72,8 @@ export const ContactsPage = (props) => {
 				{/*
         @todo: Insert the ContactForm.js and make it compatible
         */}
-        <ContactForm name={name} setName={setName} phone={phone} setPhone={setPhone} email={email} setEmail={setEmail} handleSubmit={handleSubmit}/>
+				<ContactForm name={name} setName={handleName} phone={phone} setPhone={handlePhone} email={email}
+							 setEmail={handleEmail} handleSubmit={handleSubmit}/>
 			</section>
 			<hr/>
 			<section>
