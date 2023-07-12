@@ -1,8 +1,6 @@
 import React from "react";
 
-/*
-@todo: implement the form (like the ploblem asked)
-*/
+// gets the props by an object
 export const ContactForm = ({
 								name,
 								setName,
@@ -12,6 +10,7 @@ export const ContactForm = ({
 								setEmail,
 								handleSubmit
 							}) => {
+	// the from (tweaked)
 	return (
 		<>
 			<form onSubmit={handleSubmit}>
