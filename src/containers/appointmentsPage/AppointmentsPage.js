@@ -5,7 +5,7 @@ import {TileList} from "../../components/tileList/TileList";
 
 export const AppointmentsPage = (props) => {
 	// received props
-	const conctact = props.contacts;
+	const conctacts = props.contacts;
 	const appointments = props.appointments;
 	const addAppointment = props.addApointment;
 
@@ -32,8 +32,9 @@ export const AppointmentsPage = (props) => {
 				<h2>Add Appointment</h2>
 				{/*Form comopent*/}
 				<AppointmentForm name={name} contact={currentContact} date={date} time={time}
-								 setContact={setCurrentContact} setName={setName} setDate={setDate} setTime={setTime}
-								 handleSubmit={handleSubmit} contacts={conctact}/>
+								 setCurrentContact={setCurrentContact} setName={setName} setDate={setDate}
+								 setTime={setTime}
+								 handleSubmit={handleSubmit} contacts={conctacts}/>
 			</section>
 			<hr/>
 			<section>
