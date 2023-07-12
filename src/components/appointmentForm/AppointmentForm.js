@@ -10,8 +10,8 @@ const getTodayString = () => {
 
 export const AppointmentForm = ({
 									contacts,
-									title,
-									setTitle,
+									name,
+									setName,
 									contact,
 									setContact,
 									date,
@@ -24,17 +24,17 @@ export const AppointmentForm = ({
 	return (
 		<>
 			<form onSubmit={handleSubmit}>
-				<label for="title">Title of the Appointment</label>
-				<input type="text" name="title" id="title" onChange={setTitle((e) => e.target.value)} value={title}
+				<label for="title">Name of the Appointment</label>
+				<input type="text" name="title" id="title" onChange={(e) => setName(e.target.value)} value={name}
 					   required/>
 				<label for="contact">Select contact</label>
-				<ContactPicker contacts={contacts} onChange={setContact((e) => e.target.value)}
+				<ContactPicker contacts={contacts} onChange={(e) => setContact(e.target.value)}
 							   value={contact} name="contact"></ContactPicker>
 				<label for="date">Date</label>
-				<input type="date" name="date" id="date" onChange={setDate((e) => e.target.value)} value={date}
+				<input type="date" name="date" id="date" onChange={(e) => setDate(e.target.value)} value={date}
 					   required/>
 				<label for="time">Time</label>
-				<input type="time" name="time" id="time" onChange={setTime((e) => e.target.value)} value={time}
+				<input type="time" name="time" id="time" onChange={(e) => setTime(e.target.value)} value={time}
 					   required/>
 				<input type="submit" name="submit" id="submit" value="Submit"/>
 			</form>

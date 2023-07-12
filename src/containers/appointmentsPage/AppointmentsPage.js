@@ -33,13 +33,13 @@ export const AppointmentsPage = (props) => {
 				{/*Form comopent*/}
 				<AppointmentForm name={name} contact={currentContact} date={date} time={time}
 								 setContact={setCurrentContact} setName={setName} setDate={setDate} setTime={setTime}
-								 handleSubmit={handleSubmit}/>
+								 handleSubmit={handleSubmit} contacts={conctact}/>
 			</section>
 			<hr/>
 			<section>
 				<h2>Appointments</h2>
 				{/* Tilelist */}
-				<TileList appointments={appointments}/>
+				<TileList tiles={appointments}/>
 			</section>
 		</div>
 	);
