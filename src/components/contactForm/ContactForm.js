@@ -19,7 +19,7 @@ export const ContactForm = ({
 				<br/>
 				<label for="phoneInput">Phone</label>
 				<input type="tel" name="phoneInput" id="phoneInput" required onChange={setPhone} value={phone}
-					   pattern="[1-9][0-9]{2}-[1-9][0-9]{2}-[0-9]{4}"/>
+					   pattern="/^\\(?([0-9]{3})\\)?[-.\\s]?([0-9]{3})[-.\\s]?([0-9]{4})$/" placeholder="12-34-5678"/>
 				<br/>
 				<label for="emailInput">Email</label>
 				<input type="email" name="emailInput" id="emailInput" required onChange={setEmail} value={email}/>

@@ -16,25 +16,19 @@ export const ContactsPage = (props) => {
 	// to store is the contact is duplicated
 	const [isDuplicated, setIsDuplicated] = useState(false);
 
-	const handleSubmit = (e) => {
-		e.preventDefault();
-		/*
-        Add contact info and clear data
-        if the contact name is not a duplicate
-        */
-
-		// checking for duplicate contact
-		// filter the array if theres any match
-		contacts.filter((item) => {
-			// checks the array item with use state name
-			if (item.name === name) {
-				// set the duplicated useState to true
+	// to check for the duplicated name
+	useEffect(() => {
+		for (const contact of contacts) {
+			if (contact.name === name) {
 				setIsDuplicated(true);
 			} else {
-				// set duplicated useState to false (just in case)
-				setIsDuplicated(false);
+				return;
 			}
-		})
+		}
+	});
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
 
 		// next step based on isDuplicated
 		if (isDuplicated) {
@@ -42,12 +36,11 @@ export const ContactsPage = (props) => {
 		} else {
 			// this is the function from the prop
 			AddContact(name, phone, email);
+			// clean up with hand
+			setName("");
+			setPhone("");
+			setEmail("");
 		}
-
-		// clean up with hand
-		setName(null);
-		setPhone(null);
-		setEmail(null);
 
 	};
 // handle name change
@@ -78,7 +71,7 @@ export const ContactsPage = (props) => {
 			<hr/>
 			<section>
 				<h2>Contacts</h2>
-				<TileList contact={contacts}/>
+				<TileList tiles={contacts}/>
 			</section>
 		</div>
 	);
